@@ -1,0 +1,7 @@
+package zov.crickclient.util.base;
+
+public class ProtectException extends Exception {
+    public ProtectException() {
+        super();
+    }
+}
