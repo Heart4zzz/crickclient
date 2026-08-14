@@ -114,4 +114,9 @@ public class AirStuck extends Module {
     public void pauseForAttack() {
         this.pauseTicks = 1;
     }
+
+    /** Модуль сейчас реально держит игрока в воздухе (аналог поля stuck). */
+    public boolean isStuck() {
+        return this.isEnabled() && !this.hasFailed && this.pauseTicks <= 0;
+    }
 }
