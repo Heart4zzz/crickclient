@@ -26,6 +26,8 @@ public class Module implements IMinecraft, QuickLogger {
     private final ModuleCategory category;
     private int key;
     private boolean enabled;
+    // Дополнительная подпись модуля (например режим NoSlow) — для HUD/ClickGui.
+    private String suffix;
     private final Animation animation = new Animation(Easing.BACK_OUT, 450);
 
     public final MinecraftClient mc = MinecraftClient.getInstance();
