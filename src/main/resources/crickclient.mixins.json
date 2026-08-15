@@ -43,6 +43,7 @@
     "IMinecraftClientAccessor",
     "MouseMixin",
     "PlayerEntityMixin",
+    "PlayerListHudAccessor",
     "ScreenMixin",
     "TitleScreenMixin",
     "SkyRenderingMixin",

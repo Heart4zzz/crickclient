@@ -39,6 +39,18 @@ class ConfigKeyAliasesTest {
     }
 
     @Test
+    void resolvesServerJoinerKeysInBothDirections() {
+        assertEquals(List.of("Выберите сервер", "Сервер"), ConfigKeyAliases.candidates("Выберите сервер"));
+        assertEquals(List.of("Сервер", "Выберите сервер"), ConfigKeyAliases.candidates("Сервер"));
+        assertEquals(
+                List.of("Укажите номер грифа (1-54)", "Номер грифа"),
+                ConfigKeyAliases.candidates("Укажите номер грифа (1-54)"));
+        assertEquals(
+                List.of("Номер грифа", "Укажите номер грифа (1-54)"),
+                ConfigKeyAliases.candidates("Номер грифа"));
+    }
+
+    @Test
     void leavesUnknownKeyUnchanged() {
         assertEquals(List.of("Без alias"), ConfigKeyAliases.candidates("Без alias"));
     }
